@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, request
 from flask_restful import Api, Resource
 
@@ -10,6 +12,6 @@ def root():
 
 
 api = Api(app)
-
+port = int(os.environ.get('PORT', 8080))
 if __name__ == '__main__':
     app.run(port=8080)
