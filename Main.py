@@ -1,14 +1,15 @@
 from flask import Flask, request
 from flask_restful import Api, Resource
 
+app = Flask(__name__)
+
 
 @app.route('/')
 def root():
-  return "HELLO"
+    return "HELLO"
 
 
 api = Api(app)
-api.add_resource(Color, '/color')  # Route_1
 
 if __name__ == '__main__':
-    app.run(port='8080')
+    app.run(port=8080)
